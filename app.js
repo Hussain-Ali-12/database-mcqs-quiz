@@ -1,4 +1,4 @@
-const STORAGE_KEY = "db_mcq_trainer_state_v1";
+const STORAGE_KEY = "db_mcq_trainer_state_v2_unique64";
 const THEME_KEY = "db_mcq_trainer_theme_v1";
 const NEXT_DELAY_MS = 650;
 

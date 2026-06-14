@@ -1,64 +1,27 @@
-# Database Systems MCQ Trainer
+# Database Systems MCQ Trainer (64 Unique Questions)
 
-A ready-to-host static quiz website generated from the uploaded **Database Systems 100 MCQs** document.
+This is a static website for practicing the uploaded Database Systems MCQs.
 
-## What it does
-
-- Shows one MCQ at a time.
-- Shuffles the full question order on every fresh start.
-- Shuffles answer options for every question.
-- If the selected answer is wrong, that option is crossed out and disabled.
-- The question only moves forward after the correct option is selected.
-- Tracks progress, accuracy, attempts, wrong clicks, current streak, best streak, and time.
-- Saves progress in the browser using `localStorage`.
-- Supports keyboard shortcuts: `A`, `B`, `C`, `D`.
-- Includes reset, restart shuffled, retry-wrong-only, dark mode, and CSV export.
+## What changed
+- Duplicate MCQs from the original 100-question file were removed.
+- The quiz now shows **64 unique questions only**.
+- Questions are shuffled each session.
+- Options are shuffled for each question.
+- Wrong choices are crossed out until the correct answer is selected.
+- Includes scoreboard/metrics, reset, retry-wrong-only, export, and local progress saving.
 
 ## Files
-
 - `index.html` — main page
-- `styles.css` — visual design and responsive layout
-- `app.js` — quiz logic, scoring, shuffle, local save, export
-- `questions.js` — extracted MCQ question bank
+- `styles.css` — UI styling
+- `questions.js` — deduplicated question bank (64 unique questions)
+- `app.js` — quiz logic
 
-## How to run locally
+## Hosting on GitHub Pages
+Upload all files to the **root** of a public GitHub repository, then:
+1. Go to **Settings** → **Pages**
+2. Under **Build and deployment**, choose **Deploy from a branch**
+3. Select **main** branch and **/(root)** folder
+4. Save and wait for the Pages URL
 
-Open `index.html` directly in a browser.
-
-For a local server, run:
-
-```bash
-python -m http.server 8000
-```
-
-Then open:
-
-```text
-http://localhost:8000
-```
-
-## Fast hosting options
-
-### Netlify Drop
-
-1. Go to Netlify Drop.
-2. Drag the project folder or zip file.
-3. Netlify publishes it as a live static site.
-
-### GitHub Pages
-
-1. Create a GitHub repository.
-2. Upload these files to the repository.
-3. Go to repository settings.
-4. Enable Pages from the main branch.
-5. Your site will be published from the repository files.
-
-### Vercel
-
-1. Create a Vercel project.
-2. Import the repository or upload the static project.
-3. Deploy with the default static settings.
-
-## Important note
-
-This is a study/practice website, not a secure exam platform. Since it is static frontend code, answers can be inspected by someone who opens the source files. For real anti-cheat or protected exams, use a backend and authenticated sessions.
+## Note
+The original uploaded file contained 100 MCQs, but questions 61–100 included repeated patterns. This version removes those duplicates and keeps only the first occurrence of each unique MCQ.
