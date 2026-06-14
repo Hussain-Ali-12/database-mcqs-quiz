@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Database Systems MCQ Trainer</title>
+  <meta name="description" content="One-question-at-a-time MCQ practice site with shuffled questions, shuffled options, instant correction, scoreboard, and progress saving." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Database Systems Final Prep</p>
+        <h1>MCQ Trainer</h1>
+        <p class="subtitle">Shuffled questions, shuffled options, instant feedback, and exam-style performance tracking.</p>
+      </div>
+      <div class="hero-actions">
+        <button id="themeToggle" class="ghost-btn" type="button" aria-label="Toggle theme">🌙 Theme</button>
+        <button id="resetAllTop" class="danger-btn" type="button">Reset</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="stats-grid" aria-label="Quiz metrics">
+        <article class="stat-card">
+          <span class="stat-label">Progress</span>
+          <strong id="progressStat">0 / 100</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Accuracy</span>
+          <strong id="accuracyStat">100%</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Attempts</span>
+          <strong id="attemptStat">0</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Wrong Clicks</span>
+          <strong id="wrongStat">0</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Streak</span>
+          <strong id="streakStat">0</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Time</span>
+          <strong id="timerStat">00:00</strong>
+        </article>
+      </section>
+
+      <div class="progress-wrap" aria-label="Completion progress">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+
+      <section id="quizCard" class="quiz-card" aria-live="polite">
+        <div class="quiz-topline">
+          <div>
+            <span id="questionBadge" class="badge">Question 1</span>
+            <span id="sourceBadge" class="small-badge">Original #1</span>
+          </div>
+          <span id="bestStreakBadge" class="small-badge">Best streak: 0</span>
+        </div>
+
+        <h2 id="questionText">Loading question...</h2>
+
+        <div id="optionsList" class="options-list" role="list"></div>
+
+        <p id="feedback" class="feedback neutral">Choose an option. Wrong choices will be crossed out until you find the correct one.</p>
+
+        <div class="controls">
+          <button id="restartBtn" class="secondary-btn" type="button">Restart shuffled</button>
+          <button id="retryWrongBtn" class="secondary-btn" type="button" disabled>Retry wrong only</button>
+          <button id="exportBtn" class="secondary-btn" type="button">Export results</button>
+        </div>
+      </section>
+
+      <section id="finishCard" class="finish-card hidden" aria-live="polite">
+        <p class="eyebrow">Session Complete</p>
+        <h2>Nice work — quiz finished.</h2>
+        <div class="summary-grid">
+          <div><span>Questions</span><strong id="finalQuestions">100</strong></div>
+          <div><span>Accuracy</span><strong id="finalAccuracy">100%</strong></div>
+          <div><span>Total Attempts</span><strong id="finalAttempts">0</strong></div>
+          <div><span>Wrong Clicks</span><strong id="finalWrong">0</strong></div>
+          <div><span>Best Streak</span><strong id="finalBestStreak">0</strong></div>
+          <div><span>Total Time</span><strong id="finalTime">00:00</strong></div>
+        </div>
+
+        <div class="finish-actions">
+          <button id="restartFinalBtn" class="primary-btn" type="button">Start fresh shuffled quiz</button>
+          <button id="retryWrongFinalBtn" class="secondary-btn" type="button">Practice mistakes</button>
+          <button id="resetAllFinalBtn" class="danger-btn" type="button">Reset everything</button>
+        </div>
+
+        <details class="review-panel">
+          <summary>Review questions where you clicked a wrong option</summary>
+          <div id="mistakeReview" class="mistake-review"></div>
+        </details>
+      </section>
+    </main>
+
+    <footer class="footer-note">
+      <strong>Tip:</strong> Use keyboard keys <kbd>A</kbd>, <kbd>B</kbd>, <kbd>C</kbd>, <kbd>D</kbd> to answer faster. Your session is saved locally in this browser.
+    </footer>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
